@@ -1,5 +1,3 @@
-import React from "react";
-
 const EmailLink = (props: { email: any; subject: string; body: string; children: any; }) => {
   const email = props.email;
   const subject = props.subject || '';

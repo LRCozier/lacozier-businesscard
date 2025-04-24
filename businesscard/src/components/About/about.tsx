@@ -1,4 +1,3 @@
-import React from "react";
 import EmailLink from "./emaillink";
 
 const About = () => {

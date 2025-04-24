@@ -1,18 +1,20 @@
-import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faInstagram,
+  faTiktok,
+  faGithub,
+  faLinkedin
+} from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
-
-  return(
-    <>
+  return (
     <ul>
-      <li><FontAwesomeIcon icon="fa-brands fa-instagram"/></li>
-      <li><FontAwesomeIcon icon="fa-brands fa-tiktok"/></li>
-      <li><FontAwesomeIcon icon="fa-brands fa-github"/></li>
-      <li><FontAwesomeIcon icon="fa-brands fa-linkedin"/></li>
+      <li><FontAwesomeIcon icon={faInstagram} /></li>
+      <li><FontAwesomeIcon icon={faTiktok} /></li>
+      <li><FontAwesomeIcon icon={faGithub} /></li>
+      <li><FontAwesomeIcon icon={faLinkedin} /></li>
     </ul>
-    </>
-  )
-}
+  );
+};
 
 export default Footer;
