@@ -16,8 +16,8 @@ const About = () => {
         email='lukerudderhamcozier@gmail.com'
         subject='Can We Talk?'
         body='Hey Luke,'
-        newTab={true}> 
-        Email Me!
+        newTab={true}>
+          Email Me!
       </EmailLink>
     </div>
     </div>
