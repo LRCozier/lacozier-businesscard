@@ -15,4 +15,34 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
+  font-size: var(--fs-400);
+  line-height: 1.7;
+  min-height: 100dvh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+  display: inline-flex;
+}
+
+main{
+  max-width: 50%;
+  margin-inline: auto;
+  padding: 3em 4.5em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+footer{
+  align-items: center;
+  justify-content: center;
 }
