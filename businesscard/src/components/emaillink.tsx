@@ -3,7 +3,7 @@ const EmailLink = (props: { email: any; subject: string; body: string; children:
   const subject = props.subject || '';
   const body = props.body || '';
   const children = props.children;
-  const newTab = false;
+  const newTab = true;
 
   let params = '';
 
