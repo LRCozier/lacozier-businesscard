@@ -7,6 +7,7 @@ const About = () => {
     <section className="section-about">
     <h1>Luke Rudderham-Cozier</h1>
     <h2>Front End Engineer</h2>
+    <p>A results-driven professional consistently upholding high standards of excellence across all areas of work.</p>
     <div className="buttons-row">
     <button className="btn" onClick={() => window.open()}>Developer Portfolio</button>
     <button className="btn" onClick={() => window.open()}>Personal Traiing</button>
