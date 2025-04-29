@@ -1,7 +1,9 @@
 :root {
   /*colours*/
-  --bg-color: #f9f9fb;
-  --text-primary: #111827;
+  --bg-color-body: #141414;
+  --bg-color-main: #111827;
+  --bg-color-footer: #222222;
+  --text-primary: #f9f9fb;
   --text-secondary: #6b7280;
   --border-color: #e5e7eb;
 
@@ -12,7 +14,7 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-body);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   font-size: var(--fs-400);
@@ -20,29 +22,76 @@ body {
   min-height: 100dvh;
 }
 
-a {
-  text-decoration: none;
-}
-
-li{
-  list-style: none;
-  display: inline-flex;
-}
-
 main{
+  background-color: var(--bg-color-main);
   max-width: 50%;
   margin-inline: auto;
-  padding: 3em 4.5em;
 }
 
 section {
   display: flex;
   flex-direction: column;
   text-align: center;
-
+  padding: 3em 4.5em;
 }
 
-footer{
+.section-about .buttons-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
+  flex-direction: row;
 }
+
+button{
+  background-color: var(--bg-color-main);
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+}
+
+button:hover{
+  background-color: white;
+  color: #f8f9fa;
+  border-color: white;
+}
+
+/* START - Footer Styles */
+.socials {
+  background-color: var(--bg-color-footer);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+  display: flex;
+}
+
+.socials a:hover {
+  color: #007bff;
+}
+
+.socials li {
+    display: flex;
+}
+
+.socials svg {
+  height: 24px;
+  width: 24px;
+}
+
+/* END - Footer Styles */
