@@ -35,6 +35,13 @@ section {
   padding: 3em 4.5em;
 }
 
+.profilepic {
+  height: auto;
+  width: auto;
+  margin: auto;
+  border-radius: 45%;
+}
+
 .section-about .buttons-row {
   display: flex;
   flex-direction: column;
