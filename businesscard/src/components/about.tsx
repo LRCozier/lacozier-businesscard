@@ -1,4 +1,5 @@
 import EmailLink from "./emaillink";
+import Profilepic from '../assets/Profile picture.jpg';
 
 const About = () => {
 
@@ -6,6 +7,7 @@ const About = () => {
     <>
     <section className="section-about">
     <h1>Luke Rudderham-Cozier</h1>
+    <img src={Profilepic} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic"/>
     <h2>Front End Engineer & Personal Trainer</h2>
     <p>A results-driven professional consistently upholding high standards of excellence across all areas of work.</p>
     <div className="buttons-row">
