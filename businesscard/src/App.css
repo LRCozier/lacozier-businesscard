@@ -37,10 +37,23 @@ section {
 
 .section-about .buttons-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.buttons-row > div:first-child{
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.section-about .buttons-row-2 {
+  display: flex;
+  justify-content: center;
 }
 
 button{
@@ -54,6 +67,7 @@ button{
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 16px;
+  margin: 0 5px;
 }
 
 button:hover{
@@ -95,3 +109,29 @@ button:hover{
 }
 
 /* END - Footer Styles */
+
+/*START - MOBILE STYLES*/
+
+@media only screen and (max-width: 600px) {
+  main{
+    max-width: 80%;
+}
+}
+
+/*END - MOBILE STYLES*/
+
+/*START - TABLET STYLES*/
+
+@media only screen and (min-width: 768px) {
+  
+main{
+  max-width: 70%;
+}
+
+button{
+  font-size: 1rem;
+}
+
+}
+
+/*END - TABLET STYLES*/
