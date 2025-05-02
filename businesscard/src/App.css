@@ -36,10 +36,10 @@ section {
 }
 
 section h1, h2{
-  font-size: 35px;
+  font-size: 2rem;
 }
 section p {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 .profilepic {
@@ -118,8 +118,8 @@ button:hover{
 }
 
 .socials svg {
-  height: 24px;
-  width: 24px;
+  height: 3rem;
+  width: 3rem;
 }
 
 /* END - Footer Styles */
@@ -153,7 +153,7 @@ button{
 /*START - LAPTOP/DESKTOP STYLES*/
 @media only screen and (min-width: 992px) {
   main {
-    max-width: 50%;
+    max-width: 40%;
   }
 }
 
