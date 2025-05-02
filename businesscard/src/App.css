@@ -35,11 +35,18 @@ section {
   padding: 3em 4.5em;
 }
 
+section h1, h2{
+  font-size: 35px;
+}
+section p {
+  font-size: 20px;
+}
+
 .profilepic {
-  height: auto;
-  width: auto;
+  height: 132px;
+  width: 132px;
   margin: auto;
-  border-radius: 45%;
+  border-radius: 50%;
 }
 
 .section-about .buttons-row {
@@ -79,7 +86,7 @@ button{
 
 button:hover{
   background-color: white;
-  color: #f8f9fa;
+  color: var(--text-secondary);
   border-color: white;
 }
 
@@ -142,3 +149,12 @@ button{
 }
 
 /*END - TABLET STYLES*/
+
+/*START - LAPTOP/DESKTOP STYLES*/
+@media only screen and (min-width: 992px) {
+  main {
+    max-width: 50%;
+  }
+}
+
+/*END - LAPTOP/DESKTOP STYLES*/
