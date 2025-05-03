@@ -1,15 +1,67 @@
 import EmailLink from "./emaillink";
-import Profilepic from '../assets/Profile picture.jpg';
+import Profilepicture from '../assets/Profilepicture.jpg';
+import { useState, useEffect } from "react";
+
+interface data {
+  name: string;
+  title: string;
+  profilePicture: string;
+  about: string;
+  developerPortfolioUrl: string;
+  personalTrainingUrl: string;
+  email: string;
+  emailSubject: string;
+  emailBody: string;
+  emailButtonText: string;
+  developerPortfolioButtonText: string;
+  personalTrainingButtonText: string;
+}
 
 const About = () => {
+
+  const [data, setData] = useState<data | null>(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const jsonData: data = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("Error fetching business card data:", error);
+        setData({
+          name: "Default Name",
+          title: "Default Title",
+          about: "Default about text.",
+          profilePicture: Profilepicture,
+          developerPortfolioUrl: "#",
+          personalTrainingUrl: "#",
+          email: "default@example.com",
+          emailSubject: "Default Subject",
+          emailBody: "Default Body",
+          emailButtonText: "Default Email",
+          developerPortfolioButtonText: "Default Portfolio",
+          personalTrainingButtonText: "Default Training",
+        });
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
 
   return(
     <>
     <section className="section-about">
-    <h1>Luke Rudderham-Cozier</h1>
-    <img src={Profilepic} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic"/>
-    <h2>Front End Engineer & Personal Trainer</h2>
-    <p>A results-driven professional consistently upholding high standards of excellence across all areas of work.</p>
+    <h1>{data.name}</h1>
+    <img src={Profilepicture} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic"/>
+    <h2>{data.title}</h2>
+    <p>{data.about}</p>
     <div className="buttons-row">
       <div>
       <button className="btn" onClick={() => window.open()}>Developer Portfolio</button>
@@ -17,11 +69,11 @@ const About = () => {
       </div>
     <div className="buttons-row-2">
       <EmailLink
-        email='lukerudderhamcozier@gmail.com'
-        subject='Can We Talk?'
-        body='Hey Luke,'
+        email={data.email}
+        subject={data.emailSubject}
+        body={data.emailBody}
         newTab={true}>
-          Email Me!
+          {data.emailButtonText}
       </EmailLink>
     </div>
     </div>
@@ -29,7 +81,6 @@ const About = () => {
     </section>
     </>
   )
-
 }
 
 export default About;
