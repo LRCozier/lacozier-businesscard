@@ -1,6 +1,3 @@
-# businesscard
-A professional, digital business card for myself built using React
-
 # Digital Business Card
 
 This is a digital business card built with React and Vite. It dynamically fetches personal information from a `data.json` file, making it easy to customize.
