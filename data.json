@@ -1,0 +1,14 @@
+{
+  "name": "Luke Rudderham-Cozier",
+  "title": "Front End Engineer & Personal Trainer",
+  "profilePicture": "../assets/Profilepicture.jpg",
+  "about": "A results-driven professional consistently upholding high standards of excellence across all areas of work.",
+  "developerPortfolioUrl": "DEVELOPER_PORTFOLIO_URL",
+  "personalTrainingUrl": "PERSONAL_TRAINING_URL",
+  "email": "lukerudderhamcozier@gmail.com",
+  "emailSubject": "Can We Talk?",
+  "emailBody": "Hey Luke,",
+  "emailButtonText": "Email Me!",
+  "developerPortfolioButtonText": "Developer Portfolio",
+  "personalTrainingButtonText": "Personal Training"
+}
