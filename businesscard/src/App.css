@@ -1,7 +1,7 @@
 :root {
   /*colours*/
   --bg-color-body: #141414;
-  --bg-color-main: #111827;
+  --bg-color-main: #28282B;
   --bg-color-footer: #222222;
   --text-primary: #f9f9fb;
   --text-secondary: #6b7280;
@@ -137,13 +137,8 @@ button:hover{
 /*START - TABLET STYLES*/
 
 @media only screen and (min-width: 768px) {
-  
-main{
-  max-width: 70%;
-}
-
-button{
-  font-size: 1rem;
+  main{
+    max-width: 80%;
 }
 
 }
@@ -153,7 +148,7 @@ button{
 /*START - LAPTOP/DESKTOP STYLES*/
 @media only screen and (min-width: 992px) {
   main {
-    max-width: 40%;
+    max-width: 85%;
   }
 }
 
