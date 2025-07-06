@@ -1,6 +1,6 @@
 import './App.css'
 import About from './components/about'
-import Footer from './components/footer'
+import Footer from './components/connect'
 
 const App = () => {
 
