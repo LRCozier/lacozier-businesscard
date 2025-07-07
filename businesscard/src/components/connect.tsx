@@ -10,12 +10,14 @@ import {faShareNodes} from '@fortawesome/free-solid-svg-icons'
 const Connect = () => {
   return (
     <section className='section-connect'>
-    <h3 className='section-title'><FontAwesomeIcon icon={faShareNodes} />Connect</h3><ul className='socials'>
+      <div className='card-container'>
+      <h3 className='section-title'><FontAwesomeIcon icon={faShareNodes} />Connect</h3><ul className='socials'>
       <a href='https://www.instagram.com/lacfitnessuk/' target='_blank'><li><FontAwesomeIcon icon={faInstagram} /></li></a>
       <a href='https://www.tiktok.com/@lacozierfitness?_t=ZN-8vugAgLd42o&_r=1' target='_blank'><li><FontAwesomeIcon icon={faTiktok} /></li></a>
       <a href='https://github.com/LRCozier' target='_blank'><li><FontAwesomeIcon icon={faGithub} /></li></a>
       <a href='https://www.linkedin.com/in/luke-rudderham-cozier-30205343/' target='_blank'><li><FontAwesomeIcon icon={faLinkedin} /></li></a>
     </ul>
+      </div>
     </section>
   );
 };
