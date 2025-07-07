@@ -2,7 +2,6 @@
   /*colours*/
   --bg-color-body: #141414;
   --bg-color-main: #28282B;
-  --bg-color-footer: #222222;
   --text-primary: #f9f9fb;
   --text-secondary: #6b7280;
   --border-color: #e5e7eb;
@@ -35,7 +34,7 @@ section {
   padding: 3em 4.5em;
 }
 
-section h1, h2{
+section h1, h2, h3{
   font-size: 2rem;
 }
 section p {
@@ -49,25 +48,12 @@ section p {
   border-radius: 50%;
 }
 
-.section-about .buttons-row {
+.buttons-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-bottom: 20px;
-}
-
-.buttons-row > div:first-child{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.section-about .buttons-row-2 {
-  display: flex;
-  justify-content: center;
 }
 
 button{
@@ -81,7 +67,13 @@ button{
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1rem;
-  margin: 0 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  max-width: 300px;
+}
+
+button:last-child{
+  margin-bottom: 0;
 }
 
 button:hover{
@@ -92,7 +84,6 @@ button:hover{
 
 /* START - Footer Styles */
 .socials {
-  background-color: var(--bg-color-footer);
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,6 +1,7 @@
 import './App.css'
 import About from './components/about'
-import Footer from './components/connect'
+import Connect from './components/connect'
+import ShareCard from './components/share'
 
 const App = () => {
 
@@ -8,7 +9,8 @@ const App = () => {
     <>
     <main>
       <About/>
-      <Footer/>
+      <Connect/>
+      <ShareCard />
     </main>
     </>
   )

@@ -1,6 +1,8 @@
 import EmailLink from "./emaillink";
 import Profilepicture from '../assets/Profilepicture.jpg';
 import { useState, useEffect } from "react";
+import { faCode, faDumbbell } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface data {
   name: string;
@@ -62,12 +64,9 @@ const About = () => {
     <img src={Profilepicture} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic"/>
     <h2>{data.title}</h2>
     <p>{data.about}</p>
-    <div className="buttons-row">
-      <div>
-      <button className="btn" onClick={() => window.open()}>Developer Portfolio</button>
-      <button className="btn" onClick={() => window.open()}>Personal Traiing</button>
-      </div>
-    <div className="buttons-row-2">
+    <div className="buttons-container">
+      <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faCode} /> Developer Portfolio</button>
+      <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faDumbbell} /> Personal Traiing</button>
       <EmailLink
         email={data.email}
         subject={data.emailSubject}
@@ -75,7 +74,6 @@ const About = () => {
         newTab={true}>
           {data.emailButtonText}
       </EmailLink>
-    </div>
     </div>
     <p></p>
     </section>

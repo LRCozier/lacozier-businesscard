@@ -1,3 +1,6 @@
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const EmailLink = (props: { email: any; subject: string; body: string; children: any; newTab: boolean}) => {
   const email = props.email;
   const subject = props.subject || '';
@@ -34,7 +37,7 @@ const EmailLink = (props: { email: any; subject: string; body: string; children:
 
   return (
     <button onClick={handleClick} className="mail">
-      {children}
+      <FontAwesomeIcon icon={faEnvelope} />  {children}
     </button>
   );
 };
