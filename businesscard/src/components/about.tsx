@@ -3,6 +3,7 @@ import Profilepicture from '../assets/Profilepicture.jpg';
 import { useState, useEffect } from "react";
 import { faCode, faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Profile from "./profile";
 
 interface data {
   name: string;
@@ -60,10 +61,10 @@ const About = () => {
   return(
     <>
     <section className="section-about">
-    <h1>{data.name}</h1>
-    <img src={Profilepicture} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic"/>
-    <h2>{data.title}</h2>
-    <p>{data.about}</p>
+      <Profile />
+    <div className="card-container">
+      <p>{data.about}</p>
+    </div>
     <div className="buttons-container">
       <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faCode} /> Developer Portfolio</button>
       <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faDumbbell} /> Personal Traiing</button>
