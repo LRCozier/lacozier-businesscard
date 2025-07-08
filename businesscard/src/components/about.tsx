@@ -1,7 +1,7 @@
 import EmailLink from "./emaillink";
 import Profilepicture from '../assets/Profilepicture.jpg';
 import { useState, useEffect } from "react";
-import { faCode, faDumbbell } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faDumbbell, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Profile from "./profile";
 
@@ -63,7 +63,7 @@ const About = () => {
     <section className="section-about">
       <Profile />
     <div className="card-container">
-      <p>{data.about}</p>
+      <p><FontAwesomeIcon icon={faUser} />{data.about}</p>
     </div>
     <div className="buttons-container">
       <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faCode} /> Developer Portfolio</button>
