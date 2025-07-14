@@ -1,25 +1,43 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faInstagram,
   faTiktok,
   faGithub,
   faLinkedin
-} from '@fortawesome/free-brands-svg-icons'
-import {faShareNodes} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
+import { ConnectProps } from '../types/data';
 
-const Connect = () => {
+const Footer: React.FC<ConnectProps> = ({ socials }) => {
+  if (!socials) {
+    console.warn("Footer component received no 'socials' prop.");
+    return null;
+  }
+
   return (
-    <section className='section-connect'>
-      <div className='card-container'>
-      <h3 className='section-title'><FontAwesomeIcon icon={faShareNodes} />Connect</h3><ul className='socials'>
-      <a href='https://www.instagram.com/lacfitnessuk/' target='_blank'><li><FontAwesomeIcon icon={faInstagram} /></li></a>
-      <a href='https://www.tiktok.com/@lacozierfitness?_t=ZN-8vugAgLd42o&_r=1' target='_blank'><li><FontAwesomeIcon icon={faTiktok} /></li></a>
-      <a href='https://github.com/LRCozier' target='_blank'><li><FontAwesomeIcon icon={faGithub} /></li></a>
-      <a href='https://www.linkedin.com/in/luke-rudderham-cozier-30205343/' target='_blank'><li><FontAwesomeIcon icon={faLinkedin} /></li></a>
+    <ul className='socials'>
+      {socials.instagram && (
+        <a href={socials.instagram} target='_blank' rel='noopener noreferrer'>
+          <li><FontAwesomeIcon icon={faInstagram}/></li>
+        </a>
+      )}
+      {socials.tiktok && (
+        <a href={socials.tiktok} target='_blank' rel='noopener noreferrer'>
+          <li><FontAwesomeIcon icon={faTiktok} /></li>
+        </a>
+      )}
+      {socials.github && (
+        <a href={socials.github} target='_blank' rel='noopener noreferrer'>
+          <li><FontAwesomeIcon icon={faGithub} /></li>
+        </a>
+      )}
+      {socials.linkedin && (
+        <a href={socials.linkedin} target='_blank' rel='noopener noreferrer'>
+          <li><FontAwesomeIcon icon={faLinkedin} /></li>
+        </a>
+      )}
     </ul>
-      </div>
-    </section>
   );
 };
 
-export default Connect;
+export default Footer;
