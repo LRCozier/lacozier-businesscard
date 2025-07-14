@@ -8,9 +8,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { ConnectProps } from '../types/data';
 
-const Footer: React.FC<ConnectProps> = ({ socials }) => {
+const Connect: React.FC<ConnectProps> = ({ socials }) => {
   if (!socials) {
-    console.warn("Footer component received no 'socials' prop.");
+    console.warn("Connect component received no 'socials' prop.");
     return null;
   }
 
@@ -40,4 +40,4 @@ const Footer: React.FC<ConnectProps> = ({ socials }) => {
   );
 };
 
-export default Footer;
+export default Connect;

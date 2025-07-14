@@ -2,6 +2,7 @@ export interface CardData {
   name: string;
   title: string;
   profilePicture: string;
+  location: string;
   about: string;
   developerPortfolioUrl: string;
   personalTrainingUrl: string;
@@ -19,22 +20,22 @@ export interface CardData {
   };
 }
 
-export interface HeaderProps {
+export interface ProfileProps {
   profilePicture: string;
   name: string;
   title: string;
+  location: string;
 }
 
-export interface MainContentProps {
+export interface AboutProps {
   about: string;
+}
+
+export interface EmailMeProps{
   email: string;
   emailSubject: string;
   emailBody: string;
   emailButtonText: string;
-  developerPortfolioUrl: string;
-  developerPortfolioButtonText: string;
-  personalTrainingUrl: string;
-  personalTrainingButtonText: string;
 }
 
 export interface ConnectProps {

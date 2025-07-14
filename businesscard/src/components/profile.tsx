@@ -1,21 +1,28 @@
+import React from 'react';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Profilepicture from '../assets/Profilepicture.jpg';
+import { ProfileProps } from '../types/data';
 
-const Profile = () => {
 
-  return(
+const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location }) => {
+  return (
     <>
-    <div className='profilecard'>
-    <img src={Profilepicture} alt="Profile Picture Luke Rudderham-Cozier" className="profilepic" />
-    <h1>Luke Rudderham-Cozier</h1>
-    <h2>Software Developer<br></br>
-    Personal Trainer</h2>
-    <p className='profile-location'><FontAwesomeIcon icon={faLocationDot} />Richmond Upon Thames, UK</p>
-    </div>
+      <div className='profilecard'>
+        <img src={profilePicture} alt={`Profile Picture ${name}`} className="profilepic" />
+        <h1>{name}</h1>
+        <h2>{title.split('\n').map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            {index < title.split('\n').length - 1 && <br />}
+          </React.Fragment>
+        ))}</h2>
+        <p className='profile-location'>
+          <FontAwesomeIcon icon={faLocationDot} />
+          {location}
+        </p>
+      </div>
     </>
-  )
-
-}
+  );
+};
 
 export default Profile;

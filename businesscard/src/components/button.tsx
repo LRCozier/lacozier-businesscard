@@ -3,7 +3,7 @@ import { ButtonProps } from '../types/data';
 
 const Button: React.FC<ButtonProps> = ({ icon, text, url }) => {
   if (!text || !url) {
-    console.warn("DynamicButton requires 'text' and 'url' props.");
+    console.warn("Button requires 'text' and 'url' props.");
     return null;
   }
 
