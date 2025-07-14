@@ -1,9 +1,7 @@
-import EmailLink from "./emaillink";
 import Profilepicture from '../assets/Profilepicture.jpg';
 import { useState, useEffect } from "react";
-import { faCode, faDumbbell, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Profile from "./profile";
 
 interface data {
   name: string;
@@ -61,22 +59,9 @@ const About = () => {
   return(
     <>
     <section className="section-about">
-      <Profile />
     <div className="card-container">
       <p><FontAwesomeIcon icon={faUser} />{data.about}</p>
     </div>
-    <div className="buttons-container">
-      <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faCode} /> Developer Portfolio</button>
-      <button className="btn" onClick={() => window.open()}> <FontAwesomeIcon icon={faDumbbell} /> Personal Traiing</button>
-      <EmailLink
-        email={data.email}
-        subject={data.emailSubject}
-        body={data.emailBody}
-        newTab={true}>
-          {data.emailButtonText}
-      </EmailLink>
-    </div>
-    <p></p>
     </section>
     </>
   )
