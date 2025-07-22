@@ -5,7 +5,7 @@ import Connect from './components/connect';
 import { CardData } from './types/data';
 import './App.css';
 import Button from './components/button';
-import { faEnvelope, faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import EmailLink from './components/emaillink';
 
 function App(): JSX.Element {
@@ -16,8 +16,7 @@ function App(): JSX.Element {
   useEffect(() => {
     const fetchCardDetails = async () => {
       try {
-        const response = await fetch();//add API URL
-
+        const response = await fetch();//add API
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -30,8 +29,9 @@ function App(): JSX.Element {
         setCardData({
           name: "Luke Rudderham-Cozier",
           title: "Software Developer\nPersonal Trainer",
-          profilePicture: "http://localhost/path/to/your/assets/Profilepicture.jpg",
+          profilePicture: ".",
           about: "A results-driven professional consistently upholding high standards of excellence across all areas of work.",
+          location: "Richmond Upon Thames, UK",
           developerPortfolioUrl: "https://lrcozier.github.io/lacozier-devportfolio/",
           personalTrainingUrl: "PERSONAL_TRAINING_URL",
           email: "lrcozier@gmail.com",
@@ -41,12 +41,11 @@ function App(): JSX.Element {
           developerPortfolioButtonText: "Developer Portfolio",
           personalTrainingButtonText: "Personal Training",
           socials: {
-            instagram: "https://www.instagram.com/lacozierfitness/profilecard/?igsh=MXFrdHE0b24wMGlseA==",
+            instagram: "https://www.instagram.com/lacozierfitness",
             tiktok: "https://www.tiktok.com/@lacozierfitness?_t=ZN-8vugAgLd42o&_r=1",
             github: "https://github.com/LRCozier",
             linkedin: "https://www.linkedin.com/in/luke-rudderham-cozier-30205343/"
           },
-          location: "Richmond Upon Thames, UK"
         });
       } finally {
         setLoading(false);
