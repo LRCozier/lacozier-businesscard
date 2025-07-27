@@ -7,7 +7,8 @@ import { ProfileProps } from '../types/data';
 const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location }) => {
   return (
     <>
-      <div className='profilecard'>
+    <section className='section-card'>
+    <div className='profilecard'>
         <img src={profilePicture} alt={`Profile Picture ${name}`} className="profilepic" />
         <h1>{name}</h1>
         <h2>{title.split('\n').map((line, index) => (
@@ -21,6 +22,7 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
           {location}
         </p>
       </div>
+    </section>
     </>
   );
 };

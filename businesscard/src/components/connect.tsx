@@ -15,7 +15,8 @@ const Connect: React.FC<ConnectProps> = ({ socials }) => {
   }
 
   return (
-    <ul className='socials'>
+    <section className='section-card'>
+          <ul className='socials'>
       {socials.instagram && (
         <a href={socials.instagram} target='_blank' rel='noopener noreferrer'>
           <li><FontAwesomeIcon icon={faInstagram}/></li>
@@ -37,6 +38,7 @@ const Connect: React.FC<ConnectProps> = ({ socials }) => {
         </a>
       )}
     </ul>
+    </section>
   );
 };
 

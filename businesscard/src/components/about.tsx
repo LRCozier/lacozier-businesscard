@@ -10,7 +10,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
 
   return (
     <>
-      <section className="section-about">
+      <section className="section-card">
         <div className="card-container">
           <p><FontAwesomeIcon icon={faUser} />{about}</p>
         </div>
