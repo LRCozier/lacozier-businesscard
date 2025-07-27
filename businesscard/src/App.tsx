@@ -7,6 +7,7 @@ import './App.css';
 import Button from './components/button';
 import { faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import EmailLink from './components/emaillink';
+import profilepic from './assets/profilepic.jpg';
 
 function App(): JSX.Element {
   const [cardData, setCardData] = useState<CardData | null>(null);
@@ -29,11 +30,11 @@ function App(): JSX.Element {
         setCardData({
           name: "Luke Rudderham-Cozier",
           title: "Software Developer\nPersonal Trainer",
-          profilePicture: ".",
+          profilePicture: profilepic,
           about: "A results-driven professional consistently upholding high standards of excellence across all areas of work.",
           location: "Richmond Upon Thames, UK",
           developerPortfolioUrl: "https://lrcozier.github.io/lacozier-devportfolio/",
-          personalTrainingUrl: "PERSONAL_TRAINING_URL",
+          personalTrainingUrl: "https://lrcozier.github.io/lac-fitness",
           email: "lrcozier@gmail.com",
           emailSubject: "Can We Talk?",
           emailBody: "Hey Luke,",
