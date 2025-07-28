@@ -20,7 +20,7 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
           </React.Fragment>
         ))}</h2>
         <p className='profile-location'>
-          <FontAwesomeIcon icon={faLocationDot} />
+          <FontAwesomeIcon icon={faLocationDot} />&nbsp;
           {location}
         </p>
       </div>

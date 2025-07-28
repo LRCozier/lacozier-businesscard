@@ -11,9 +11,8 @@ const About: React.FC<AboutProps> = ({ about }) => {
   return (
     <>
       <section className="section-card">
-        <div className="card-container">
-          <p><FontAwesomeIcon icon={faUser} />{about}</p>
-        </div>
+        <h3><FontAwesomeIcon icon={faUser} />  About</h3>
+          <p>{about}</p>
       </section>
     </>
   );
