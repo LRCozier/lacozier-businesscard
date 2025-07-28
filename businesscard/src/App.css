@@ -1,25 +1,44 @@
 :root {
-  --bg-color-body: #141414;
-  --bg-color-main: #28282B;
+  --gradient-bg-start: #6a5acd;
+  --gradient-bg-end: #8a2be2;
+  --card-bg-color: rgba(255, 255, 255, 0.1);
+  --card-border-color: rgba(255, 255, 255, 0.15);
   --text-primary: #f9f9fb;
-  --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
-  --fs-700: 1.5625rem;
-  --fs-400: 0.64rem;
-  --fs-700-heading: 1rem;
+  --text-secondary: #c9c9d1;
+  --accent-blue: #007bff;
+  --button-hover-bg: rgba(255, 255, 255, 0.2);
+  --button-text-hover: #ffffff;
+  --border-radius-card: 20px;
+  --border-radius-button: 12px;
+  --spacing-card-gap: 20px;
+  --max-width-mobile: 90%;
+  --max-width-desktop: 400px;
 }
 
-body {
-  background-color: var(--bg-color-body);
-  color: var(--text-primary);
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--gradient-bg-start), var(--gradient-bg-end));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
   font-size: var(--fs-400);
-  min-height: 100dvh;
 }
 
-main{
-  max-width: 50%;
-  margin-inline: auto;
+.app-container {
+  width: 100%;
+  max-width: var(--max-width-desktop);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-card-gap);
+  align-items: center;
+  box-sizing: border-box;
 }
 
 section {
@@ -52,29 +71,10 @@ section p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.profile-pic-border{
-  content: '';
-  position: absolute;
-  inset: 4px;
-  z-index: -1;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #007bff, #7a00ff, #ff00c8, #ff0000);
-  background-size: 400%;
-  border-radius: 50%;
-  animation: gradientborder 20s linear infinite;
-  filter: blur(5px);
-}
-
-@keyframes gradientborder {
-  0% { background-position: 0 0;}
-  50% { background-position: 400% 0;}
-  100% { background-position: 0 0;}
-  
-}
-
 .profilepic {
   height: 132px;
   width: 132px;
-  border-radius: inherit;
+  border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
   border: 4px solid var(--text-primary);
