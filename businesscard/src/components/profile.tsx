@@ -9,7 +9,9 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
     <>
     <section className='section-card'>
     <div className='profilecard'>
+      <div className='profile-pic-border'>
         <img src={profilePicture} alt={`Profile Picture ${name}`} className="profilepic" />
+      </div>
         <h1>{name}</h1>
         <h2>{title.split('\n').map((line, index) => (
           <React.Fragment key={index}>

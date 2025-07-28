@@ -1,7 +1,6 @@
 :root {
   --bg-color-body: #141414;
   --bg-color-main: #28282B;
-  --bg-color-footer: #222222;
   --text-primary: #f9f9fb;
   --text-secondary: #6b7280;
   --border-color: #e5e7eb;
@@ -28,10 +27,16 @@ section {
   flex-direction: column;
   text-align: center;
   padding: 3em 4.5em;
+  border-radius: 10%;
+  border: solid #e5e7eb;
 }
 
 section h1, h2, h3{
   font-size: 1.2rem;
+}
+
+section p {
+  font-size: 1.1rem;
 }
 
 .profile-card {
@@ -47,10 +52,29 @@ section h1, h2, h3{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.profile-pic-border{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  z-index: -1;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #007bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  border-radius: 50%;
+  animation: gradientborder 20s linear infinite;
+  filter: blur(5px);
+}
+
+@keyframes gradientborder {
+  0% { background-position: 0 0;}
+  50% { background-position: 400% 0;}
+  100% { background-position: 0 0;}
+  
+}
+
 .profilepic {
   height: 132px;
   width: 132px;
-  border-radius: 50%;
+  border-radius: inherit;
   object-fit: cover;
   margin-bottom: 15px;
   border: 4px solid var(--text-primary);
