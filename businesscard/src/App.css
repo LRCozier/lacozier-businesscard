@@ -58,7 +58,7 @@ section p {
   font-size: 1.1rem;
 }
 
-.profile-card {
+.profilecard {
   background-color: var(--bg-color-main);
   border: 2px solid var(--border-color);
   border-radius: 15px;
@@ -80,20 +80,20 @@ section p {
   border: 4px solid var(--text-primary);
 }
 
-.profile-card h1 {
+.profilecard h1 {
   font-size: 2.2rem;
   margin-bottom: 5px;
   color: var(--text-primary);
 }
 
-.profile-card h2 {
+.profilecard h2 {
   font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 10px;
   color: var(--text-secondary);
 }
 
-.profile-card .profile-location {
+.profilecard .profile-location {
   font-size: 1rem;
   color: var(--text-secondary);
   display: flex;
