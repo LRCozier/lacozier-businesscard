@@ -1,4 +1,4 @@
-import { useState, useEffect, JSX } from 'react';
+import { useState, JSX } from 'react';
 import Profile from './components/profile';
 import About from './components/about'; 
 import Connect from './components/connect'; 
@@ -8,70 +8,16 @@ import Button from './components/button';
 import { faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import EmailLink from './components/emaillink';
 import profilepic from './assets/profilepic.jpg';
+import data from './data.json';
 
 function App(): JSX.Element {
-  const [cardData, setCardData] = useState<CardData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
 
-  useEffect(() => {
-    const fetchCardDetails = async () => {
-      try {
-        const response = await fetch();//add API
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data: CardData = await response.json();
-        setCardData(data);
-      } catch (e: any) {
-        console.error("Failed to fetch card data:", e);
-        setError(e);
-        // Fallback if API fails
-        setCardData({
-          name: "Luke Rudderham-Cozier",
-          title: "Software Developer\nPersonal Trainer",
-          profilePicture: profilepic,
-          about: "A results-driven professional consistently upholding high standards of excellence across all areas of work.",
-          location: "Richmond Upon Thames, UK",
-          developerPortfolioUrl: "https://lrcozier.github.io/lacozier-devportfolio/",
-          personalTrainingUrl: "https://lrcozier.github.io/lac-fitness",
-          email: "lrcozier@gmail.com",
-          emailSubject: "Can We Talk?",
-          emailBody: "Hey Luke,",
-          emailButtonText: "Email Me!",
-          developerPortfolioButtonText: "Developer Portfolio",
-          personalTrainingButtonText: "Personal Training",
-          socials: {
-            instagram: "https://www.instagram.com/lacozierfitness",
-            tiktok: "https://www.tiktok.com/@lacozierfitness?_t=ZN-8vugAgLd42o&_r=1",
-            github: "https://github.com/LRCozier",
-            linkedin: "https://www.linkedin.com/in/luke-rudderham-cozier-30205343/"
-          },
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCardDetails();
-  }, []);
-
-  if (loading) {
-    return <div className="loading-state">Loading your digital business card...</div>;
-  }
-
-  if (error && !cardData) {
-    return <div className="error-state">Error: Could not load business card. Please try again later. ({error.message})</div>;
-  }
-
-  if (!cardData) {
-    return <div className="no-data-state">No business card data available.</div>;
-  }
+  const [cardData] = useState<CardData>(data as CardData);
 
   return (
     <div className="app-container">
       <Profile
-        profilePicture={cardData.profilePicture}
+        profilePicture={profilepic}
         name={cardData.name}
         title={cardData.title}
         location={cardData.location || "Location not specified"}
@@ -81,8 +27,7 @@ function App(): JSX.Element {
         about={cardData.about} />
 
       <div className="buttons-container">
-
-        <EmailLink email={''} emailSubject={''} emailBody={''} emailButtonText={''}/>
+        <EmailLink email={cardData.email} emailSubject={cardData.emailSubject} emailBody={cardData.emailBody} emailButtonText={cardData.emailButtonText}/>
         
         <Button
           icon={faCode}

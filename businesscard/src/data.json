@@ -10,5 +10,6 @@
   "emailBody": "Hey Luke,",
   "emailButtonText": "Email Me!",
   "developerPortfolioButtonText": "Developer Portfolio",
-  "personalTrainingButtonText": "Personal Training (Coming Soon)"
+  "personalTrainingButtonText": "Personal Training (Coming Soon)",
+  "location": "Richmond Upon Thames"
 }
