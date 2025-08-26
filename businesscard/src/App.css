@@ -51,7 +51,7 @@ html, body {
   background: linear-gradient(135deg, var(--gradient-bg-start), var(--gradient-bg-end));
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   overflow: auto;
   transition: background 0.5s ease;
@@ -61,7 +61,8 @@ html, body {
   width: 100%;
   max-width: var(--max-width-desktop);
   padding: 20px;
-  padding-top: 60px;
+  padding-top: 20px;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-card-gap);
@@ -76,10 +77,9 @@ html, body {
   transition: background-color 0.5s ease;
 }
 
-/* Theme Toggle Styles */
 .theme-toggle-wrapper {
   position: absolute;
-  top: 20px;
+  top: 50px;
   right: 20px;
 }
 
