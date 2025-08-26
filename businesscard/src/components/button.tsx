@@ -8,7 +8,7 @@ const Button: React.FC<ButtonProps> = ({ icon, text, url }) => {
   }
 
   return (
-    <button className="btn" onClick={() => window.open(url, '_blank', 'noopener noreferrer')}>
+    <button className="dynamic-button" onClick={() => window.open(url, '_blank', 'noopener noreferrer')}>
       {icon && <FontAwesomeIcon icon={icon} />}
       {text}
     </button>

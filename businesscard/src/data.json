@@ -1,15 +1,19 @@
 {
   "name": "Luke Rudderham-Cozier",
-  "title": "Front End Engineer & Personal Trainer",
-  "profilePicture": "../assets/Profilepicture.jpg",
-  "about": "A results-driven professional consistently upholding high standards of excellence across all areas of work.",
-  "developerPortfolioUrl": "https://lrcozier.github.io/lacozier-devportfolio/",
-  "personalTrainingUrl": "PERSONAL_TRAINING_URL",
-  "email": "lrcozier@gmail.com",
-  "emailSubject": "Can We Talk?",
-  "emailBody": "Hey Luke,",
+  "title": "Software Engineer & Personal Trainer",
+  "location": "Richmond Upon Thames",
+  "email": "youremail@example.com",
+  "emailSubject": "Hello from your business card!",
+  "emailBody": "Hi Luke, I found your digital business card and wanted to reach out.",
   "emailButtonText": "Email Me!",
   "developerPortfolioButtonText": "Developer Portfolio",
+  "developerPortfolioUrl": "https://lrcozier.github.io/lacozier-devportfolio/",
   "personalTrainingButtonText": "Personal Training (Coming Soon)",
-  "location": "Richmond Upon Thames"
+  "personalTrainingUrl": "#",
+  "socials": {
+    "instagram": "https://www.instagram.com/lacfitnessuk",
+    "tiktok": "https://www.tiktok.com/@lacozierfitness",
+    "github": "https://github.com/LRCozier",
+    "linkedin": "https://www.linkedin.com/in/luke-rudderham-cozier-30205343/"
+  }
 }

@@ -15,30 +15,38 @@ const Connect: React.FC<ConnectProps> = ({ socials }) => {
   }
 
   return (
-    <section className='section-card'>
-          <ul className='socials'>
-      {socials.instagram && (
-        <a href={socials.instagram} target='_blank' rel='noopener noreferrer'>
-          <li><FontAwesomeIcon icon={faInstagram}/></li>
-        </a>
-      )}
-      {socials.tiktok && (
-        <a href={socials.tiktok} target='_blank' rel='noopener noreferrer'>
-          <li><FontAwesomeIcon icon={faTiktok} /></li>
-        </a>
-      )}
-      {socials.github && (
-        <a href={socials.github} target='_blank' rel='noopener noreferrer'>
-          <li><FontAwesomeIcon icon={faGithub} /></li>
-        </a>
-      )}
-      {socials.linkedin && (
-        <a href={socials.linkedin} target='_blank' rel='noopener noreferrer'>
-          <li><FontAwesomeIcon icon={faLinkedin} /></li>
-        </a>
-      )}
-    </ul>
-    </section>
+    <>
+      <ul className='socials-list'>
+        {socials.instagram && (
+          <li>
+            <a href={socials.instagram} target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faInstagram}/>
+            </a>
+          </li>
+        )}
+        {socials.tiktok && (
+          <li>
+            <a href={socials.tiktok} target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faTiktok} />
+            </a>
+          </li>
+        )}
+        {socials.github && (
+          <li>
+            <a href={socials.github} target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
+        )}
+        {socials.linkedin && (
+          <li>
+            <a href={socials.linkedin} target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </li>
+        )}
+      </ul>
+    </>
   );
 };
 

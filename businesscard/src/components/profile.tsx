@@ -3,14 +3,12 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProfileProps } from '../types/data';
 
-
 const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location }) => {
   return (
-    <>
-    <section className='section-card'>
-    <div className='profilecard'>
-      <div className='profile-pic-border'>
-        <img src={profilePicture} alt={`Profile Picture ${name}`} className="profilepic" />
+    <div className='profile-card'>
+      <div className='profile-pic-container'>
+        <div className='profile-pic-border'></div>
+        <img src={profilePicture} alt={`Profile Picture ${name}`} className="profile-pic" />
       </div>
         <h1>{name}</h1>
         <h2>{title.split('\n').map((line, index) => (
@@ -24,8 +22,6 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
           {location}
         </p>
       </div>
-    </section>
-    </>
   );
 };
 

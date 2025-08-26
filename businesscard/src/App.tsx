@@ -1,6 +1,5 @@
 import { useState, JSX } from 'react';
 import Profile from './components/profile';
-import About from './components/about'; 
 import Connect from './components/connect'; 
 import { CardData } from './types/data';
 import './App.css';
@@ -9,6 +8,7 @@ import { faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import EmailLink from './components/emaillink';
 import profilepic from './assets/profilepic.jpg';
 import data from './data.json';
+import ThemeSwitcher from './components/themeswitcher';
 
 function App(): JSX.Element {
 
@@ -16,6 +16,7 @@ function App(): JSX.Element {
 
   return (
     <div className="app-container">
+      <ThemeSwitcher />
       <Profile
         profilePicture={profilepic}
         name={cardData.name}
@@ -23,12 +24,8 @@ function App(): JSX.Element {
         location={cardData.location || "Location not specified"}
       />
 
-      <About
-        about={cardData.about} />
-
       <div className="buttons-container">
         <EmailLink email={cardData.email} emailSubject={cardData.emailSubject} emailBody={cardData.emailBody} emailButtonText={cardData.emailButtonText}/>
-        
         <Button
           icon={faCode}
           text={cardData.developerPortfolioButtonText}
@@ -41,9 +38,7 @@ function App(): JSX.Element {
         />
       </div>
 
-      <Connect
-        socials={cardData.socials}
-      />
+      <Connect socials={cardData.socials} />
     </div>
   );
 }
