@@ -14,11 +14,13 @@ const EmailLink: React.FC<EmailMeProps> = ({ email, emailSubject, emailBody, ema
 
   const mailtoLink = `mailto:${email}?${params.toString()}`;
 
+  const finalMailtoLink = mailtoLink.replace(/\+/g, '%20');
+
   return (
     <Button
       icon={faEnvelope}
       text={emailButtonText}
-      url={mailtoLink}
+      url={finalMailtoLink}
     />
   );
 };
