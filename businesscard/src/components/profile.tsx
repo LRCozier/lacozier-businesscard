@@ -10,6 +10,7 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
         <div className='profile-pic-border'></div>
         <img src={profilePicture} alt={`Profile Picture ${name}`} className="profile-pic" />
       </div>
+      <div className="mobile-tablet-only-profile-text">
         <h1>{name}</h1>
         <h2>{title.split('\n').map((line, index) => (
           <React.Fragment key={index}>
@@ -22,6 +23,7 @@ const Profile: React.FC<ProfileProps> = ({ profilePicture, name, title, location
           {location}
         </p>
       </div>
+    </div>
   );
 };
 
