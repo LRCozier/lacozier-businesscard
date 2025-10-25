@@ -1,16 +1,15 @@
 import { useState, JSX } from 'react';
-import Profile from './components/profile';
+import ProfileImage from './components/profileimage';
+import ProfileText from './components/profiletext';
 import Connect from './components/connect';
 import { CardData } from './types/data';
 import './App.scss';
 import Button from './components/button';
-import { faCode, faDumbbell, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import EmailLink from './components/emaillink';
 import profilepic from './assets/profilepic.jpg';
 import data from './data.json';
 import ThemeSwitcher from './components/themeswitcher';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 
 function App(): JSX.Element {
   const [cardData] = useState<CardData>(data as CardData);
@@ -20,25 +19,14 @@ function App(): JSX.Element {
       <ThemeSwitcher />
 
       <div className="main-content-wrapper">
-        <Profile
-          profilePicture={profilepic}
-          name={cardData.name}
-          title={cardData.title}
-          location={cardData.location || "Location not specified"}
-        />
+        <ProfileImage profilePicture={profilepic} name={cardData.name} />
 
         <div className="text-content-wrapper">
-          <h1 className="desktop-only-name">{cardData.name}</h1>
-          <h2 className="desktop-only-title">{cardData.title.split('\n').map((line, index) => (
-            <React.Fragment key={index}>
-              {line}
-              {index < cardData.title.split('\n').length - 1 && <br />}
-            </React.Fragment>
-          ))}</h2>
-          <p className='desktop-only-location'>
-            <FontAwesomeIcon icon={faLocationDot} />&nbsp;
-            {cardData.location || "Location not specified"}
-          </p>
+          <ProfileText
+            name={cardData.name}
+            title={cardData.title}
+            location={cardData.location || "Location not specified"}
+          />
 
           <div className="buttons-container">
             <EmailLink email={cardData.email} emailSubject={cardData.emailSubject} emailBody={cardData.emailBody} emailButtonText={cardData.emailButtonText}/>

@@ -1,44 +1,40 @@
-// Variables
 $border-radius-card: 24px;
 $border-radius-button: 14px;
 $spacing-card-gap: 24px;
-$max-width-card-initial: 380px; // Initial max-width for phone-sized portrait
-$max-width-tablet-portrait: 480px; // For larger phones and small tablets in portrait
-$max-width-desktop-content: 800px; // Max width for the *content* area on desktop
+$max-width-card-initial: 380px;
+$max-width-tablet-portrait: 480px;
+$max-width-desktop-card: 1600px;
 
 $theme-transition: all 0.4s ease-in-out;
 
-// Base theme variables (Light Mode)
 :root {
   --body-bg: #f5f5f5;
-  --card-bg-color: #ffffff; // Card background for mobile/tablet
+  --card-bg-color: #ffffff;
   --card-border-color: #e0e0e0;
   --text-primary: #333333;
   --text-secondary: #666666;
   --button-hover-bg: #f0f0f0;
   --button-text-hover: #333333;
-  --profile-border-color: #d4af37; // Gold accent
-  --toggle-bg: #e0e0e0; // Toggle background
-  --toggle-thumb-bg: #f7b538; // Toggle thumb background
-  --icon-color: #666666; // Icon color for sun/moon
+  --profile-border-color: #d4af37;
+  --toggle-bg: #e0e0e0;
+  --toggle-thumb-bg: #f7b538;
+  --icon-color: #666666;
 }
 
-// Dark mode overrides
 html[data-theme='dark'] {
   --body-bg: #1c1c1c;
-  --card-bg-color: #2b2b2b; // Card background for mobile/tablet
+  --card-bg-color: #2b2b2b;
   --card-border-color: #444444;
   --text-primary: #e0e0e0;
   --text-secondary: #b0b0b0;
   --button-hover-bg: #3c3c3c;
   --button-text-hover: #e0e0e0;
-  --profile-border-color: #d4af37; // Gold accent
-  --toggle-bg: #444444; // Toggle background
-  --toggle-thumb-bg: #f7b538; // Toggle thumb background
-  --icon-color: #f0f0f0; // Icon color for sun/moon
+  --profile-border-color: #d4af37;
+  --toggle-bg: #444444;
+  --toggle-thumb-bg: #f7b538;
+  --icon-color: #f0f0f0;
 }
 
-// Global styles for html and body
 html, body {
   margin: 0;
   padding: 0;
@@ -49,16 +45,16 @@ html, body {
   background: var(--body-bg);
   display: flex;
   justify-content: center;
-  align-items: center; // Vertically center the content
+  align-items: center;
   min-height: 100vh;
   overflow: auto;
   transition: background $theme-transition, color $theme-transition;
 }
 
-// Main application container (card-like on mobile/tablet, full-width content wrapper on desktop)
 .app-container {
+  position: relative;
   width: 100%;
-  max-width: $max-width-card-initial; // Default for smaller screens
+  max-width: $max-width-card-initial;
   padding: $spacing-card-gap;
   padding-top: $spacing-card-gap;
   display: flex;
@@ -66,17 +62,16 @@ html, body {
   gap: $spacing-card-gap;
   align-items: center;
   box-sizing: border-box;
-  background-color: var(--card-bg-color); // Card background on mobile/tablet
+  background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: $border-radius-card;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: background-color $theme-transition, border-color $theme-transition, box-shadow $theme-transition;
 }
 
-// Theme Toggle Button (Reverted to original sun/moon/thumb styling)
 .theme-toggle-wrapper {
   position: absolute;
-  top: 50px;
+  top: 20px;
   right: 20px;
   z-index: 10;
 }
@@ -86,13 +81,13 @@ html, body {
   border: none;
   padding: 0;
   position: relative;
-  width: 60px; // Standard toggle switch width
-  height: 30px; // Standard toggle switch height
+  width: 60px;
+  height: 30px;
   border-radius: 15px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   display: flex;
-  justify-content: space-between; // Space out icons
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   background-color: var(--toggle-bg);
@@ -102,17 +97,16 @@ html, body {
     width: 18px;
     height: 18px;
     z-index: 1;
-    display: flex; // Ensure icons are centered within their span
+    display: flex;
     justify-content: center;
     align-items: center;
-    // Positioning for sun/moon icons
-    &:first-child { // Sun icon (light mode)
+    &:first-child {
       opacity: 1;
-      transform: translateX(3px); // Position left
+      transform: translateX(3px);
     }
-    &:last-of-type { // Moon icon (dark mode)
-      opacity: 0; // Hidden by default in light mode
-      transform: translateX(-3px); // Position right
+    &:last-of-type {
+      opacity: 0;
+      transform: translateX(-3px);
     }
 
     svg {
@@ -131,52 +125,37 @@ html, body {
     border-radius: 50%;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 0;
-    transform: translateX(0); // Default position for light mode
+    transform: translateX(0);
   }
 }
 
-// Dark mode adjustments for toggle
 html[data-theme='dark'] {
   .theme-toggle {
     .theme-toggle__icon {
-      &:first-child { // Sun icon
-        opacity: 0; // Hide sun
+      &:first-child {
+        opacity: 0;
       }
-      &:last-of-type { // Moon icon
-        opacity: 1; // Show moon
+      &:last-of-type {
+        opacity: 1;
       }
     }
     .theme-toggle__thumb {
-      transform: translateX(30px); // Move thumb to the right
-      box-shadow: 0 0 8px 2px rgba(247, 181, 56, 0.6); // Add glow
+      transform: translateX(30px);
+      box-shadow: 0 0 8px 2px rgba(247, 181, 56, 0.6);
     }
   }
 }
 
-
-// Profile Card Section (on mobile/tablet, contains only image + text)
-.profile-card {
-  padding-top: $spacing-card-gap * 2; // Keep for mobile/tablet spacing
-  position: relative;
-  z-index: 0;
+.profile-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100%;
-
-  .profile-pic-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-  }
+  margin-bottom: 15px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 
   .profile-pic {
     width: 100%;
@@ -187,54 +166,59 @@ html[data-theme='dark'] {
     box-sizing: border-box;
     transition: border-color $theme-transition;
   }
+}
 
-  .mobile-tablet-only-profile-text { // Wrapper for text content in Profile.tsx
-    width: 100%;
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+.profile-text-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: $spacing-card-gap * 2;
+  padding-bottom: $spacing-card-gap;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-weight: 700;
+    transition: color $theme-transition;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    transition: color $theme-transition;
+  }
+
+  .profile-location {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: color $theme-transition;
+
+    svg {
       color: var(--text-primary);
-      font-weight: 700;
-      transition: color $theme-transition;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-bottom: 12px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-      transition: color $theme-transition;
-    }
-
-    .profile-location {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      transition: color $theme-transition;
-
-      svg {
-        color: var(--text-primary);
-      }
     }
   }
 }
 
-// Buttons Container (always stacked)
 .buttons-container {
   padding: 15px $spacing-card-gap;
   gap: 12px;
   width: 100%;
   display: flex;
-  flex-direction: column; // Always column (stacked)
+  flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 }
 
-// Dynamic Buttons (Email, Portfolio, Personal Training)
 .dynamic-button,
 .email-link-button {
   background-color: transparent;
@@ -243,7 +227,7 @@ html[data-theme='dark'] {
   padding: 14px 24px;
   text-decoration: none;
   display: flex;
-  flex-direction: column; // Icon above text (always)
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -256,7 +240,7 @@ html[data-theme='dark'] {
   text-align: center;
   margin: 0;
 
-  svg { // Icon styling for stacked mode (above text)
+  svg {
     margin-right: 0;
     margin-bottom: 8px;
     color: var(--text-secondary);
@@ -270,19 +254,18 @@ html[data-theme='dark'] {
   }
 }
 
-// Connect Section (Socials)
 .connect-section {
   padding: 15px $spacing-card-gap;
 
   .socials-list {
     display: flex;
-    flex-direction: row; // Always row for socials
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 24px; // Spacing between social icons
+    gap: 24px;
 
     a {
       color: var(--text-secondary);
@@ -294,174 +277,160 @@ html[data-theme='dark'] {
       }
     }
 
-    svg { // Target SVG directly within the anchor
+    svg {
       height: 2.6rem;
       width: 2.6rem;
     }
   }
 }
 
-
-// --- Responsive Styles ---
-
-// Tablet Portrait (480px to 767px) - similar to mobile but more spacious
 @media (min-width: 480px) and (max-width: 767px) {
   .app-container {
-    max-width: $max-width-tablet-portrait; // Wider card
-    padding: $spacing-card-gap * 1.5; // More internal padding
-    gap: $spacing-card-gap * 1.2; // Slightly larger gaps
+    max-width: $max-width-tablet-portrait;
+    padding: $spacing-card-gap * 1.5;
+    gap: $spacing-card-gap * 1.2;
   }
 
-  .profile-card {
-    padding-top: $spacing-card-gap * 2.5; // More space at the top
+  .profile-image-container {
+    margin-bottom: 20px;
+  }
 
-    .mobile-tablet-only-profile-text {
-      h1 {
-        font-size: 2.1rem; // Slightly larger heading
-      }
-      h2 {
-        font-size: 1.25rem;
-      }
-      .profile-location {
-        font-size: 1.05rem;
-      }
+  .profile-text-content {
+    padding-top: $spacing-card-gap * 2.5;
+    padding-bottom: $spacing-card-gap * 1.5;
+
+    h1 {
+      font-size: 2.1rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+    .profile-location {
+      font-size: 1.05rem;
     }
   }
 
   .buttons-container {
     padding: 20px ($spacing-card-gap * 1.5);
-    gap: 15px; // Slightly more gap between buttons
+    gap: 15px;
   }
 
   .dynamic-button,
   .email-link-button {
-    padding: 16px 28px; // Larger buttons
+    padding: 16px 28px;
     font-size: 1.1rem;
   }
 
   .connect-section {
     padding: 20px ($spacing-card-gap * 1.5);
-    .socials-list svg { // Adjust social icons for tablet
+    .socials-list svg {
       height: 2.8rem;
       width: 2.8rem;
     }
   }
 }
 
-// Desktop / Large Tablet Landscape (768px and up)
 @media (min-width: 768px) {
-  html, body {
-    padding-bottom: 0; // Ensure no extra padding at bottom
-  }
-
   .app-container {
-    max-width: $max-width-desktop-content; // Max width for the *internal content*
-    background-color: transparent; // No distinct background for the card
-    border: none; // No border
-    border-radius: 0; // No border-radius
-    box-shadow: none; // No shadow
-    gap: 0; // Reset gap, controlled by main-content-wrapper
-    padding: $spacing-card-gap * 2; // General padding around the content
-    flex-direction: row; // Change to row to allow main-content-wrapper to split
-    justify-content: center; // Center content horizontally if it doesn't fill max-width
+    max-width: $max-width-desktop-card;
+    padding: $spacing-card-gap * 3;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $spacing-card-gap * 4;
   }
 
-  .main-content-wrapper { // The new wrapper for desktop columns
+  .theme-toggle-wrapper {
+    position: static;
+    order: 2;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  .main-content-wrapper {
     display: flex;
-    flex-direction: row; // Two columns
-    align-items: flex-start; // Align items to the top
-    gap: $spacing-card-gap * 4; // Gap between the two columns
-    width: 100%; // Take full width of app-container
-    max-width: $max-width-desktop-content; // Cap the internal content width
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    gap: $spacing-card-gap * 4;
   }
 
-  // Profile Card on desktop (left column - image only)
-  .profile-card {
-    flex: 0 0 160px; // Fixed width for the profile picture column
-    padding-top: 0; // No extra top padding here
-    align-items: flex-start; // Align pic to start of its column
-
-    .profile-pic-container {
-      width: 160px; // Larger profile picture on desktop
-      height: 160px;
-      margin-bottom: 0; // No bottom margin, as text is elsewhere
-    }
-
-    .mobile-tablet-only-profile-text {
-      display: none; // Hide the text from the Profile component on desktop
-    }
+  .profile-image-container {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0;
+    margin-top: 10px;
   }
 
-  // Text content wrapper (right column)
   .text-content-wrapper {
-    flex-grow: 1; // Take up remaining space
+    flex-grow: 1;
     display: flex;
-    flex-direction: column; // Stack elements vertically
-    align-items: flex-start; // Align text to the left
-    text-align: left; // Ensure text is left-aligned
-    gap: 10px; // Default gap between elements in this column
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: $spacing-card-gap;
 
-    .desktop-only-name { // Style for the duplicated name
-      font-size: 2.8rem;
-      margin-bottom: 5px;
-      color: var(--text-primary);
-      font-weight: 700;
-      transition: color $theme-transition;
-    }
-
-    .desktop-only-title { // Style for the duplicated title
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 15px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-      transition: color $theme-transition;
-    }
-
-    .desktop-only-location { // Style for the duplicated location
-      font-size: 1.1rem;
-      color: var(--text-secondary);
+    .profile-text-content {
+      padding-top: 0;
+      padding-bottom: 0;
+      align-items: flex-start;
+      text-align: left;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      margin-bottom: $spacing-card-gap; // Space before buttons
-      transition: color $theme-transition;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
 
-      svg {
-        color: var(--text-primary);
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 5px;
+        order: 1;
+        flex-basis: auto;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        order: 3;
+        width: 100%;
+      }
+
+      .profile-location {
+        font-size: 1.1rem;
+        order: 4;
+        margin-bottom: $spacing-card-gap;
+        width: 100%;
       }
     }
   }
 
-  // Buttons container on desktop (still stacked, but within right column)
   .buttons-container {
-    padding: 0; // Remove container padding as parent handles it
-    gap: 15px; // Slightly more gap between stacked buttons
-    align-items: flex-start; // Align buttons to the left
-    width: auto; // Allow buttons to shrink if text-content-wrapper is narrow
-    max-width: 300px; // Optional: Max width for buttons in desktop column
+    padding: 0;
+    gap: 15px;
+    align-items: flex-start;
+    width: 250px;
   }
 
   .dynamic-button,
   .email-link-button {
-    font-size: 1.1rem;
-    padding: 16px 28px;
-    width: 100%; // Ensure buttons fill available width in column
-    // Icon above text remains for all breakpoints
+    width: 100%;
   }
 
   .connect-section {
-    padding: $spacing-card-gap 0 0 0; // Padding for social icons
-    align-self: flex-start; // Align socials to the left
-    width: 100%;
-
+    padding: $spacing-card-gap 0 0 0;
+    align-self: flex-start;
+    width: auto;
+    
     .socials-list {
-      justify-content: flex-start; // Align social icons to the left
-      gap: 30px; // More space between icons on desktop
-      svg {
-        height: 3rem;
-        width: 3rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+      
+      a {
+        width: auto;
+        svg {
+          height: 2.6rem;
+          width: 2.6rem;
+        }
       }
     }
   }
