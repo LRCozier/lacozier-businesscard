@@ -15,38 +15,38 @@ const Connect: React.FC<ConnectProps> = ({ socials }) => {
   }
 
   return (
-    <>
+    <div className='connect-section'>
       <ul className='socials-list'>
         {socials.instagram && (
           <li>
             <a href={socials.instagram} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faInstagram}/>
+              <FontAwesomeIcon icon={faInstagram} className="social-icon-svg" />
             </a>
           </li>
         )}
         {socials.tiktok && (
           <li>
             <a href={socials.tiktok} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faTiktok} />
+              <FontAwesomeIcon icon={faTiktok} className="social-icon-svg" />
             </a>
           </li>
         )}
         {socials.github && (
           <li>
             <a href={socials.github} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faGithub} />
+              <FontAwesomeIcon icon={faGithub} className="social-icon-svg" />
             </a>
           </li>
         )}
         {socials.linkedin && (
           <li>
             <a href={socials.linkedin} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faLinkedin} className="social-icon-svg" />
             </a>
           </li>
         )}
       </ul>
-    </>
+    </div>
   );
 };
 

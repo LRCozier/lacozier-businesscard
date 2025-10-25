@@ -272,7 +272,19 @@ html[data-theme='dark'] {
 }
 
 .connect-section {
-  padding: 15px $spacing-card-gap;
+  padding: 15px 24px;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: color .5s ease;
+  }
 
   .socials-list {
     display: flex;
@@ -282,11 +294,11 @@ html[data-theme='dark'] {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 24px;
+    gap: 20px;
 
     li a {
       color: var(--social-icon-color);
-      transition: color $theme-transition;
+      transition: color .5s ease;
       display: flex;
 
       &:hover {
@@ -295,9 +307,8 @@ html[data-theme='dark'] {
     }
 
     li a svg {
-      height: 2.6rem;
-      width: 2.6rem;
-      fill: currentColor;
+      height: 2.5rem;
+      width: 2.5rem;
     }
   }
 }
@@ -434,21 +445,21 @@ html[data-theme='dark'] {
   }
 
   .connect-section {
-    padding: $spacing-card-gap 0 0 0;
+    padding: 24px 0 0 0;
     align-self: flex-start;
     width: auto;
     
     .socials-list {
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
+      list-style-type: none;
       gap: 10px;
       
       li a {
         width: auto;
         svg {
-          height: 2.6rem;
-          width: 2.6rem;
-          fill: currentColor;
+          height: 2.5rem;
+          width: 2.5rem;
         }
       }
     }
