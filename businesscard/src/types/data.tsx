@@ -20,11 +20,15 @@ export interface CardData {
   };
 }
 
-export interface ProfileProps {
-  profilePicture: string;
+export interface ProfileTextProps {
   name: string;
   title: string;
   location: string;
+}
+
+export interface ProfileImageProps {
+  profilePicture: string;
+  name: string;
 }
 
 export interface AboutProps {
