@@ -18,7 +18,10 @@ $theme-transition: all 0.4s ease-in-out;
   --profile-border-color: #d4af37;
   --toggle-bg: #e0e0e0;
   --toggle-thumb-bg: #f7b538;
-  --icon-color: #666666;
+  --icon-color-toggle-inactive: #888888;
+  --icon-color-toggle-active: #ffffff;
+  --social-icon-color: #666666;
+  --social-icon-hover-color: #333333;
 }
 
 html[data-theme='dark'] {
@@ -32,7 +35,10 @@ html[data-theme='dark'] {
   --profile-border-color: #d4af37;
   --toggle-bg: #444444;
   --toggle-thumb-bg: #f7b538;
-  --icon-color: #f0f0f0;
+  --icon-color-toggle-inactive: #b0b0b0;
+  --icon-color-toggle-active: #ffffff;
+  --social-icon-color: #b0b0b0;
+  --social-icon-hover-color: #e0e0e0;
 }
 
 html, body {
@@ -92,26 +98,32 @@ html, body {
   box-sizing: border-box;
   background-color: var(--toggle-bg);
   transition: background-color 0.3s ease;
+  overflow: hidden;
 
   .theme-toggle__icon {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+
     &:first-child {
       opacity: 1;
-      transform: translateX(3px);
+      transform: translateX(0);
+      color: var(--icon-color-toggle-inactive);
     }
     &:last-of-type {
       opacity: 0;
-      transform: translateX(-3px);
+      transform: translateX(0);
+      color: var(--icon-color-toggle-inactive);
     }
 
     svg {
-      fill: var(--icon-color);
-      transition: fill 0.3s ease;
+      fill: currentColor;
+      transition: fill 0.3s ease, color 0.3s ease;
     }
   }
 
@@ -133,16 +145,21 @@ html[data-theme='dark'] {
   .theme-toggle {
     .theme-toggle__icon {
       &:first-child {
-        opacity: 0;
+        opacity: 1;
       }
       &:last-of-type {
         opacity: 1;
+        color: var(--icon-color-toggle-active);
       }
     }
     .theme-toggle__thumb {
       transform: translateX(30px);
       box-shadow: 0 0 8px 2px rgba(247, 181, 56, 0.6);
     }
+  }
+
+  .theme-toggle__icon:first-child {
+    color: var(--icon-color-toggle-inactive);
   }
 }
 
@@ -267,19 +284,20 @@ html[data-theme='dark'] {
     margin: 0;
     gap: 24px;
 
-    a {
-      color: var(--text-secondary);
+    li a {
+      color: var(--social-icon-color);
       transition: color $theme-transition;
       display: flex;
 
       &:hover {
-        color: var(--text-primary);
+        color: var(--social-icon-hover-color);
       }
     }
 
-    svg {
+    li a svg {
       height: 2.6rem;
       width: 2.6rem;
+      fill: currentColor;
     }
   }
 }
@@ -351,13 +369,13 @@ html[data-theme='dark'] {
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
-    gap: $spacing-card-gap * 4;
+    gap: $spacing-card-gap * 6;
   }
 
   .profile-image-container {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 200px;
+    flex: 0 0 500px;
+    width: 500px;
+    height: 500px;
     margin-bottom: 0;
     margin-top: 10px;
   }
@@ -407,7 +425,7 @@ html[data-theme='dark'] {
     padding: 0;
     gap: 15px;
     align-items: flex-start;
-    width: 250px;
+    width: 100%;
   }
 
   .dynamic-button,
@@ -425,11 +443,12 @@ html[data-theme='dark'] {
       justify-content: flex-start;
       gap: 10px;
       
-      a {
+      li a {
         width: auto;
         svg {
           height: 2.6rem;
           width: 2.6rem;
+          fill: currentColor;
         }
       }
     }
