@@ -173,6 +173,7 @@ html[data-theme='dark'] {
   margin-bottom: 15px;
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  margin-top: 50px;
 
   .profile-pic {
     width: 100%;
@@ -191,7 +192,7 @@ html[data-theme='dark'] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: $spacing-card-gap * 2;
+  padding-top: calc($spacing-card-gap / 2);
   padding-bottom: $spacing-card-gap;
 
   h1 {
@@ -300,6 +301,8 @@ html[data-theme='dark'] {
       color: var(--social-icon-color);
       transition: color .5s ease;
       display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         color: var(--social-icon-hover-color);
@@ -322,11 +325,12 @@ html[data-theme='dark'] {
 
   .profile-image-container {
     margin-bottom: 20px;
+    margin-top: 50px;
   }
 
   .profile-text-content {
-    padding-top: $spacing-card-gap * 2.5;
-    padding-bottom: $spacing-card-gap * 1.5;
+    padding-top: calc($spacing-card-gap / 2);
+    padding-bottom: calc($spacing-card-gap * 1.5);
 
     h1 {
       font-size: 2.1rem;
@@ -360,6 +364,11 @@ html[data-theme='dark'] {
 }
 
 @media (min-width: 768px) {
+
+  body {
+    overflow: hidden;
+  }
+  
   .app-container {
     max-width: $max-width-desktop-card;
     padding: $spacing-card-gap * 3;
@@ -378,8 +387,8 @@ html[data-theme='dark'] {
   .main-content-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     width: 100%;
+    align-items: flex-start; 
     gap: $spacing-card-gap * 6;
   }
 
