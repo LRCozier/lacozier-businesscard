@@ -62,7 +62,7 @@ html, body {
   width: 100%;
   max-width: $max-width-card-initial;
   padding: $spacing-card-gap;
-  padding-top: $spacing-card-gap;
+  padding-top: $spacing-card-gap * 2.5;
   display: flex;
   flex-direction: column;
   gap: $spacing-card-gap;
@@ -315,11 +315,12 @@ html[data-theme='dark'] {
   }
 }
 
-
+// Mobile/iPad mini view
 @media (min-width: 480px) and (max-width: 767px) {
   .app-container {
     max-width: $max-width-tablet-portrait;
     padding: $spacing-card-gap * 1.5;
+    padding-top: $spacing-card-gap * 3;
     gap: $spacing-card-gap * 1.2;
   }
 
@@ -366,11 +367,12 @@ html[data-theme='dark'] {
 }
 
 
-// iPad/tablet Portrait View (768px to 1024px)
+// iPad/tablet Portrait View
 @media (min-width: 768px) and (max-width: 1024px) {
   .app-container {
     max-width: 700px;
     padding: $spacing-card-gap * 2.5;
+    padding-top: $spacing-card-gap * 3.5;
     gap: $spacing-card-gap * 2;
     flex-direction: column;
     align-items: center;
@@ -427,7 +429,8 @@ html[data-theme='dark'] {
   }
 }
 
-//Landscape iPad/tablet and desktop view
+
+// Desktop View
 @media (min-width: 1025px) {
   body {
     overflow: hidden;
@@ -436,6 +439,7 @@ html[data-theme='dark'] {
   .app-container {
     max-width: $max-width-desktop-card;
     padding: $spacing-card-gap * 3;
+    padding-top: $spacing-card-gap * 3;
     flex-direction: row;
     align-items: flex-start;
     gap: $spacing-card-gap * 4;
@@ -445,25 +449,27 @@ html[data-theme='dark'] {
     position: static;
     order: 2;
     margin-left: auto;
-    margin-top: 10px;
+    margin-top: 0;
+    align-self: flex-start;
   }
 
   .main-content-wrapper {
     display: flex;
     flex-direction: row;
     width: 100%;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: $spacing-card-gap * 6;
   }
 
   .profile-image-container {
-    flex: 0 0 500px;
-    width: 500px;
-    height: 500px;
+    flex: 0 0 400px;
+    width: 400px;
+    height: 400px;
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 0;
     margin-left: 0;
     margin-right: 0;
+    align-self: flex-start;
   }
 
   .text-content-wrapper {
@@ -472,7 +478,7 @@ html[data-theme='dark'] {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    gap: $spacing-card-gap;
+    gap: cal($spacing-card-gap) / 2;
 
     .profile-text-content {
       padding-top: 0;
@@ -480,9 +486,10 @@ html[data-theme='dark'] {
       align-items: flex-start;
       text-align: left;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
+      flex-wrap: nowrap;
       width: 100%;
+      position: relative;
 
       h1 {
         font-size: 2.8rem;
@@ -493,7 +500,7 @@ html[data-theme='dark'] {
 
       h2 {
         font-size: 1.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
         order: 3;
         width: 100%;
       }
@@ -503,6 +510,16 @@ html[data-theme='dark'] {
         order: 4;
         margin-bottom: $spacing-card-gap;
         width: 100%;
+      }
+
+      .theme-toggle-wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin-left: 0;
+          margin-top: 0;
+          align-self: auto;
+          order: initial;
       }
     }
   }
@@ -522,12 +539,18 @@ html[data-theme='dark'] {
   .connect-section {
     padding: 24px 0 0 0;
     align-self: flex-start;
-    width: auto;
+    width: 100%;
     
+    h3 {
+      justify-content: flex-start;
+      margin-left: 0;
+    }
+
     .socials-list {
       flex-direction: row;
+      justify-content: flex-start;
       list-style-type: none;
-      gap: 150px;
+      gap: 20px;
       
       li a {
         width: auto;
