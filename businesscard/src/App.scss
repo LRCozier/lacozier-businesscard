@@ -164,8 +164,8 @@ html[data-theme='dark'] {
 }
 
 .profile-image-container {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -193,8 +193,6 @@ html[data-theme='dark'] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: calc($spacing-card-gap / 2);
-  padding-bottom: $spacing-card-gap;
 
   h1 {
     font-size: 2rem;
@@ -317,6 +315,7 @@ html[data-theme='dark'] {
   }
 }
 
+
 @media (min-width: 480px) and (max-width: 767px) {
   .app-container {
     max-width: $max-width-tablet-portrait;
@@ -325,8 +324,10 @@ html[data-theme='dark'] {
   }
 
   .profile-image-container {
-    margin-bottom: 20px;
-    margin-top: 50px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 25px;
+    margin-top: 60px;
   }
 
   .profile-text-content {
@@ -334,10 +335,10 @@ html[data-theme='dark'] {
     padding-bottom: calc($spacing-card-gap * 1.5);
 
     h1 {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
     }
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
     .profile-location {
       font-size: 1.05rem;
@@ -364,8 +365,70 @@ html[data-theme='dark'] {
   }
 }
 
-@media (min-width: 768px) {
 
+// iPad/tablet Portrait View (768px to 1024px)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .app-container {
+    max-width: 700px;
+    padding: $spacing-card-gap * 2.5;
+    gap: $spacing-card-gap * 2;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+  }
+
+  .profile-text-content {
+    h1 {
+      font-size: 2.8rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .profile-location {
+      font-size: 1.2rem;
+    }
+    padding-top: $spacing-card-gap;
+    padding-bottom: $spacing-card-gap * 2;
+  }
+
+  .buttons-container {
+    padding: 20px ($spacing-card-gap * 2.5);
+    gap: 20px;
+  }
+
+  .dynamic-button,
+  .email-link-button {
+    padding: 20px 32px;
+    font-size: 1.25rem;
+  }
+
+  .connect-section {
+    padding: 30px ($spacing-card-gap * 2.5) 0;
+    .socials-list {
+      gap: 40px;
+      li a svg {
+        height: 3.2rem;
+        width: 3.2rem;
+      }
+    }
+  }
+
+  .main-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
+//Landscape iPad/tablet and desktop view
+@media (min-width: 1025px) {
   body {
     overflow: hidden;
   }
@@ -399,6 +462,8 @@ html[data-theme='dark'] {
     height: 500px;
     margin-bottom: 0;
     margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .text-content-wrapper {
